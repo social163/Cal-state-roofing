@@ -132,18 +132,22 @@
     .hero {
       position: relative;
       min-height: 100vh;
-      display: grid;
-      grid-template-columns: 1fr 1fr;
+      display: flex;
+      align-items: center;
       padding-top: 64px;
       overflow: hidden;
     }
     .hero-left {
-      display: flex;
-      flex-direction: column;
-      justify-content: center;
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 64px;
+      align-items: center;
       padding: 80px 64px;
       position: relative;
       z-index: 1;
+      max-width: 1200px;
+      margin: 0 auto;
+      width: 100%;
     }
     .hero-eyebrow {
       display: inline-flex;
@@ -211,8 +215,7 @@
       flex-shrink: 0;
     }
     .hero-right {
-      position: relative;
-      overflow: hidden;
+      display: none;
     }
     .hero-right img {
       width: 100%;
@@ -236,8 +239,8 @@
       padding: 28px;
       box-shadow: 0 8px 40px oklch(0% 0 0 / 0.1);
       border: 1px solid var(--border);
-      margin-top: 32px;
-      max-width: 400px;
+      margin-top: 0;
+      width: 100%;
     }
     .form-headline {
       font-family: 'Bricolage Grotesque', sans-serif;
@@ -1037,11 +1040,9 @@
     @media (max-width: 900px) {
       .nav { padding: 0 24px; }
       .offers-inner { padding: 0 24px; grid-template-columns: 1fr; gap: 32px; }
-      .hero { grid-template-columns: 1fr; }
-      .hero-left { padding: 80px 24px 40px; }
-      .hero-right { height: 300px; }
-      .hero-right::after { background: linear-gradient(to top, var(--cream), transparent 50%); }
-      .hero-form { max-width: 100%; }
+      .hero-left { grid-template-columns: 1fr; padding: 80px 24px 40px; gap: 32px; }
+      .hero-right { display: none; }
+      .hero-form { width: 100%; margin-top: 0; }
       .stats-inner { grid-template-columns: repeat(3, 1fr); }
       .stat-block:nth-child(4),
       .stat-block:nth-child(5) { display: none; }
@@ -1072,9 +1073,9 @@
       margin: 0 auto;
       padding: 0 64px;
       display: grid;
-      grid-template-columns: 1fr 1fr;
-      gap: 64px;
-      align-items: start;
+      grid-template-columns: 2fr 3fr;
+      gap: 80px;
+      align-items: center;
     }
     .offers-kicker {
       font-family: 'Bricolage Grotesque', sans-serif;
